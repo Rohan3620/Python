@@ -13,7 +13,7 @@ winning_cases = {
     (GUN, SNAKE): "win",    # Gun kills snake
 }
 
-# Game Logic Function
+
 def play(user_choice):
     user = choices[user_choice]
     computer = random.choice([SNAKE, WATER, GUN])
@@ -28,13 +28,13 @@ def play(user_choice):
     else:
         result_label.config(text="😢 You lose!", fg="red")
 
-# GUI Setup
+
 root = tk.Tk()
 root.title("Snake Water Gun Game")
 root.geometry("400x300")
 root.resizable(False, False)
 
-# Heading
+
 title_label = tk.Label(root, text="Snake 🐍 Water 💧 Gun 🔫", font=("Arial", 18, "bold"))
 title_label.pack(pady=10)
 
