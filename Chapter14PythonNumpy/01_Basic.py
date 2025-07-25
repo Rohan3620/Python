@@ -45,6 +45,8 @@ print("\nOnes*n Array:\n", b3)
 b = np.linspace(0, 10, 4)
 print("Linspace (0 to 10 with 4 points):", b)
 # 3. Arange - like range(), but returns a NumPy array
+# 0 - start, 10 - end point, 4 step size
+# last point is not included
 c = np.arange(0, 10, 4)  # last value is excluded
 print("Arange (step 4):", c)
 # feature	     np.arange()	    np.linspace()
@@ -66,7 +68,7 @@ print("Random Float Array (0-1):", e)
 
 # 6. Random integers
 
-f = np.random.randint(0, 10)  # single int
+f = np.random.randint(0, 10)  
 print("Random Integer (0-9):", f)
 
 g = np.random.randint(0, 100, size=(3, 4))  # 3x4 matrix with random ints
@@ -74,3 +76,8 @@ print("Random Integer Matrix:\n", g)
 
 h=np.random.random(50)+100
 print(h)
+
+
+# Identity Matrix
+eye = np.eye(3)
+print("Identity Matrix (3x3):\n", eye)
