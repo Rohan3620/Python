@@ -1,0 +1,46 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from PIL import Image
+
+# Load image
+path = r"C:\Users\C9IN\Downloads\Data\E.jpg"
+img = Image.open(path)
+img_arr = np.array(img)
+
+# Global list to store points
+points = []
+
+# Mouse click function
+def onclick(event):
+    if event.xdata is not None and event.ydata is not None:
+        x, y = int(event.xdata), int(event.ydata)
+        points.append((x, y))
+        print(f"Point {len(points)}: (x={x}, y={y})")
+        # Draw red dot
+        plt.plot(x, y, 'ro')
+        plt.draw()
+
+# Show image
+fig, ax = plt.subplots()
+ax.imshow(img_arr)
+plt.title("Click TOP-LEFT and BOTTOM-RIGHT corners of the FACE region")
+cid = fig.canvas.mpl_connect('button_press_event', onclick)
+plt.show()
+
+# After window closes, apply effect
+if len(points) == 2:
+    (x1, y1), (x2, y2) = points
+    # Ensure y1 < y2 and x1 < x2
+    y1, y2 = sorted([y1, y2])
+    x1, x2 = sorted([x1, x2])
+
+    # Apply color effect (remove green)
+    img_arr[y1:y2, x1:x2, 1] = 0
+
+    # Show result
+    plt.imshow(img_arr)
+    plt.title("Face Margin Applied")
+    plt.axis('off')
+    plt.show()
+else:
+    print("You need to click exactly TWO points!")
