@@ -32,6 +32,13 @@ print("Float Array (auto typecasting):", a)  # All converted to float
 a = np.array([1, 2, 3, 4.5, "Rohan"])
 print("Mixed Array (converted to string):", a)   
 
+import timeit
+# List Comprehension Timing
+list_time = timeit.timeit('[j**4 for j in range(1, 9)]', number=1_000_000)
+array_time = timeit.timeit('np.arange(1, 9)**4', setup='import numpy as np', number=1_000_000)
+print(f"List Comprehension Time (1M runs): {list_time:.6f} seconds")
+print(f"NumPy Array Time        (1M runs): {array_time:.6f} seconds")
+
 # Data Generation
 # 1. Zeros array
 b1 = np.zeros((3, 4))  # matrix of shape 3x4 filled with 0.0
@@ -77,7 +84,9 @@ print("Random Integer Matrix:\n", g)
 h=np.random.random(50)+100
 print(h)
 
-
+i=np.empty(4)
+print("Empty array",i)
 # Identity Matrix
 eye = np.eye(3)
 print("Identity Matrix (3x3):\n", eye)
+

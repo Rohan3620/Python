@@ -27,20 +27,13 @@ plt.title("Click TOP-LEFT and BOTTOM-RIGHT corners of the FACE region")
 cid = fig.canvas.mpl_connect('button_press_event', onclick)
 plt.show()
 
-# After window closes, apply effect
 if len(points) == 2:
     (x1, y1), (x2, y2) = points
-    # Ensure y1 < y2 and x1 < x2
     y1, y2 = sorted([y1, y2])
     x1, x2 = sorted([x1, x2])
 
-    # Apply color effect (remove green)
-    img_arr[y1:y2, x1:x2, 1] = 0
-
-    # Show result
+    
     plt.imshow(img_arr)
-    plt.title("Face Margin Applied")
-    plt.axis('off')
     plt.show()
 else:
     print("You need to click exactly TWO points!")

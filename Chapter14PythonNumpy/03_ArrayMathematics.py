@@ -24,6 +24,12 @@ print("Max of y:", np.max(y))                  # 6
 print("Min of y:", np.min(y))                  # 4
 print("Median of y:", np.median(y))            # 5.0
 print(np.std(x))
+print(np.argmin(x))
+print(np.sqrt(x))
+print(np.sin(x))
+print(np.cos(x))
+print(np.cumsum(x))
+
 
 print("\nBroadcasting Example:")
 arr = np.array([1, 2, 3])
