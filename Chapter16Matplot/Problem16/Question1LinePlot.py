@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+import numpy as np
+a=np.linspace(0,10,20)
+b=np.linspace(2,10,20)
+c=np.linspace(1,10,20)
+d=np.linspace(2,10,20)
+e=np.linspace(1,10,20)
+plt.figure(figsize=(2,2))
+ax1=plt.subplot(1,5,1)
+ax2=plt.subplot(1,5,2)
+ax3=plt.subplot(1,5,3)
+ax4=plt.subplot(1,5,4)
+ax5=plt.subplot(1,5,5)
+ax1.plot(a,marker='o',color='r')
+ax2.plot(b,marker='^',color='g')
+ax3.plot(c,marker='+',color='b')
+ax4.plot(d,marker='d',color='c')
+ax5.plot(e,marker='s',color='m')
+plt.grid=True
+plt.show()

@@ -1,16 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
-
-# Load image
 path = r"C:\Users\C9IN\Downloads\Data\E.jpg"
 img = Image.open(path)
 img_arr = np.array(img)
-
-# Global list to store points
 points = []
-
-# Mouse click function
 def onclick(event):
     if event.xdata is not None and event.ydata is not None:
         x, y = int(event.xdata), int(event.ydata)
@@ -19,8 +13,6 @@ def onclick(event):
         # Draw red dot
         plt.plot(x, y, 'ro')
         plt.draw()
-
-# Show image
 fig, ax = plt.subplots()
 ax.imshow(img_arr)
 plt.title("Click TOP-LEFT and BOTTOM-RIGHT corners of the FACE region")
