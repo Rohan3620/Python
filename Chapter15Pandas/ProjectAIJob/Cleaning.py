@@ -13,7 +13,7 @@ duplicates = df.duplicated()
 print(f"Total Duplicates: {duplicates.sum()}")
 
 df['job_title'] = df['job_title'].str.strip().str.lower()
-df['company_name'] = df['company_name'].str.strip().str.title()  # Capitalize like "Smart Analytics"
+df['company_name'] = df['company_name'].str.strip().str.title()  
 df['industry'] = df['industry'].str.strip().str.lower()
 
 df.to_csv('cleaned_ai_jobs.csv', index=False)
