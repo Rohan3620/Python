@@ -54,5 +54,10 @@ a=pd.DataFrame([
      ["Krishna",70,"M1","BCA",2],
   ["Rushali",89,"E1","BBA",2],
     ],columns=["Name","Marks","Section","Course","Semester"],index=range(1,11))
+
+print(a[["Name","Marks"]]) # Display columns name and marks
+filtered = a[a["Marks"]<=70] # Filter rows where Marks are less than or equal to 70
+print(filtered[["Name","Marks"]]) # Display Name and Marks of filtered rows
+print(a.loc[a["Marks"]>90,["Name","Course","Semester"]])#using loc to filter rows where Marks are greater than 90 and display Name, Course, and Semester
+a["Double_Marks"] = a["Marks"] * 2# Adding a new column 'Double_Marks' which is double the value of 'Marks'
 print(a)
-print()

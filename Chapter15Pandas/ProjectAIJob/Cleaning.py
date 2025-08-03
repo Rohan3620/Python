@@ -1,22 +1,37 @@
 import pandas as pd
-df=pd.read_csv(r"C:\Users\C9IN\Desktop\coding\Python\Chapter15Pandas\ProjectAIJob\Data\ai_job_dataset.csv")
-print(df.head())   
-df.info()      
-print(df.describe())
+
+df = pd.read_csv(r"C:\Users\C9IN\Desktop\coding\Python\Chapter15Pandas\ProjectAIJob\Data\ai_job_dataset.csv")
+
+# df.info()
+# print(df.head())     
+# print(df.tail())
 print(df.columns)
-print(
-df.isnull())
-df['posting_date'] = pd.to_datetime(df['posting_date'])
-df['application_deadline'] = pd.to_datetime(df['application_deadline'])
+# print(df.describe())
+# print(df.count())
+# print(df['benefits_score'].sort_values(ascending=False))
+# print(df.benefits_score.mean())
+# print(df.benefits_score.median())
+# print(df.benefits_score.std())
+# print(df.isnull())
+# print(df.isnull().sum())
+# duplicates = df.duplicated()
+# print(f"Total Duplicates: {duplicates.sum()}")
+# df.drop_duplicates(inplace=True)
+# print(df.head())
+# df.fillna(0, inplace=True)
+# print(df.isnull().sum())
+# 
+# 
+# 
 
-duplicates = df.duplicated()
-print(f"Total Duplicates: {duplicates.sum()}")
 
-df['job_title'] = df['job_title'].str.strip().str.lower()
-df['company_name'] = df['company_name'].str.strip().str.title()  
-df['industry'] = df['industry'].str.strip().str.lower()
 
-df.to_csv('cleaned_ai_jobs.csv', index=False)
+
+
+
+
+
+
 
 
 

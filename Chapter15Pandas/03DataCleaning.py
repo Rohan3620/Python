@@ -66,3 +66,9 @@ print(df.head())
 df.at[10, 'gear'] = 500
 print(df.head())
 
+#Drop on the basic of email same
+# def dropDuplicateEmails(customers: pd.DataFrame) -> pd.DataFrame:
+    # customers = customers.drop_duplicates(subset="email")
+    # return customers
+df.rename(columns={"carb": "carburetor"}, inplace=True)
+print(df.head())

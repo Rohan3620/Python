@@ -1,5 +1,6 @@
 import pandas as pd
 df =pd.read_csv(r"C:\Users\C9IN\Downloads\Data\mtcars2.csv")
+print(df.size)
 print(df)
 print("\nIt show the rows and col\n")
 print(df.shape)
