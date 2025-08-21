@@ -8,7 +8,6 @@ path = r"C:\Users\C9IN\Downloads\Data\E.jpg"
 img = Image.open(path)
 img_arr = np.array(img)
 
-# 💗 17-point polygon for face
 points1 = np.array([
     [1662, 1650],
     [2391, 1615],
@@ -29,7 +28,6 @@ points1 = np.array([
     [1696, 1532]
 ], dtype=np.int32)
 
-# 💙 24-point polygon for side
 points2 = np.array([
     [3078, 1662],
     [2391, 1615],
@@ -57,7 +55,6 @@ points2 = np.array([
     [3092, 1692]
 ], dtype=np.int32)
 
-# 🧡 14-point polygon for lower margin
 points3 = np.array([
     [1662, 1650],
     [2391, 1615],
@@ -75,7 +72,6 @@ points3 = np.array([
     [1654, 1789]
 ], dtype=np.int32)
 
-# 💚 New 17-point region from last input
 points4 = np.array([
     [3078, 1662],
     [2391, 1615],
@@ -97,25 +93,22 @@ points4 = np.array([
     [3065, 1726]
 ], dtype=np.int32)
 
-# Create masks
-mask1 = np.zeros_like(img_arr)  # Face
-mask2 = np.zeros_like(img_arr)  # Side
-mask3 = np.zeros_like(img_arr)  # Lower
-mask4 = np.zeros_like(img_arr)  # New right region
+mask1 = np.zeros_like(img_arr)  
+mask2 = np.zeros_like(img_arr) 
+mask3 = np.zeros_like(img_arr) 
+mask4 = np.zeros_like(img_arr)  
 
 
-cv2.fillPoly(mask1, [points1], color=(0, 255, 255))    # 💙 Top-Left (Cyan)
-cv2.fillPoly(mask2, [points2], color=(255, 0, 0))      # ❤️ Top-Right (Red)e
-cv2.fillPoly(mask3, [points3], color=(255, 0, 255))    # 💗 Bottom-Left (Magenta/Pink)w/Cyan-ish
-cv2.fillPoly(mask4, [points4], color=(0, 255, 0))      # 💚 Bottom-Right (Green)
+cv2.fillPoly(mask1, [points1], color=(0, 255, 255))   
+cv2.fillPoly(mask2, [points2], color=(255, 0, 0))      
+cv2.fillPoly(mask3, [points3], color=(255, 0, 255))    
+cv2.fillPoly(mask4, [points4], color=(0, 255, 0))      
 
-# Apply in proper layering order
 img_arr[np.where(mask1 != 0)] = mask1[np.where(mask1 != 0)]
 img_arr[np.where(mask3 != 0)] = mask3[np.where(mask3 != 0)]
 img_arr[np.where(mask2 != 0)] = mask2[np.where(mask2 != 0)]
 img_arr[np.where(mask4 != 0)] = mask4[np.where(mask4 != 0)]
 
-# Show result
 plt.imshow(img_arr)
 
 

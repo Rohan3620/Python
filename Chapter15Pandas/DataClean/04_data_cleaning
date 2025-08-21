@@ -1,0 +1,11 @@
+import pandas as pd
+data=pd.read_csv(r"C:\Users\C9IN\Desktop\coding\Python\Chapter15Pandas\Data\salaries.csv")
+
+print("Total duplicated value",data.duplicated().sum())
+data.drop_duplicates(inplace=True)
+print("Total duplicated value",data.duplicated().sum())
+print("Total Null value",data.isnull().sum())
+salmean=data.salary.mean()
+# data.salary.fillna(salmean,inplace=True)
+data["salary"] = data["salary"].fillna(salmean)
+print("Total Null value",data.isnull().sum())

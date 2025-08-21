@@ -1,7 +1,7 @@
 import pandas as pd
 
-# Load the CSV file
-df = pd.read_csv(r"C:\Users\C9IN\Downloads\Data\mtcars2.csv")
+# Load the CSV fil"C:\Users\C9IN\Desktop\coding\Python\Chapter15Pandas\Data\mtcars2.csv"
+df = pd.read_csv(r"C:\Users\C9IN\Desktop\coding\Python\Chapter15Pandas\Data\mtcars2.csv")
 
 # Display original data
 print("Original DataFrame:")

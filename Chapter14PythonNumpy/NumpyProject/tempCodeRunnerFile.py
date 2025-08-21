@@ -1,0 +1,1 @@
+img_arr[np.where(mask1 != 0)] = mask1[np.where(mask1 != 0)]

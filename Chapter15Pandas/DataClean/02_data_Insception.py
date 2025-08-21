@@ -1,0 +1,13 @@
+import pandas as pd
+data=pd.read_csv(r"C:\Users\C9IN\Desktop\coding\Python\Chapter15Pandas\Data\salaries.csv")
+print("Size of Dataset",data.size)
+print("No of col and rows",data.shape)
+print("Column names:", data.columns)
+print("Null values in each column:\n", data.isnull().sum())
+print("Unique values in each column:\n", data.nunique())
+print("Data Types of Each Column:\n", data.dtypes)
+print("Correlation matrix:\n", data.corr(numeric_only=True))
+print(data.head())
+print(data.tail())
+print(data.info())
+print(data.describe())
