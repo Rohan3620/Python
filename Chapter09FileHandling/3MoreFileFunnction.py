@@ -1,8 +1,22 @@
-f=open("File.txt")
-lines=f.readlines()#it return list each element is line of file
-print(lines,type(lines))
-lines1=f.readline()
-print(lines1,type(lines1))
-lines2=f.readline()
-print(lines2,type(lines2))
+st = "Rohan is good boy\n"
+
+f = open("File.txt", "r")
+print(f.read())
+
+f = open("File.txt", "r+")
+f.write(st)
+print(f.read())
+
+f = open("File.txt", "w")
+f.write(st)
+f = open("File.txt", "w+")
+f.write(st)
+print(f.read())
+
+st = "Rohan is good \n"
+f = open("File.txt", "a")
+f.write(st)
+f = open("File.txt", "a+")
+f.write(st)
+print(f.read())
 f.close()

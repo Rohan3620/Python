@@ -1,6 +1,13 @@
-f = open("RohanFile.txt","r")
-data=f.read()
+f = open("File.txt", "r")
+data = f.read()
 print(data)
-
-
+f.seek(0)
+data = f.read(8)
+print(data)
+f.seek(0)
+data = f.readline()
+print(data)
+f.seek(0)
+data = f.readlines()
+print(data)
 f.close()
